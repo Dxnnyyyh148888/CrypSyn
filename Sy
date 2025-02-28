@@ -1,6 +1,6 @@
 local function replaceImage(instance)
     if instance:IsA("TextLabel") or instance:IsA("TextBox") or instance:IsA("TextButton") then
-        instance.Text = string.gsub(instance.Text, "Cryptic", "Synapse X  - v2.63")
+        instance.Text = string.gsub(instance.Text, "Synapse X  - v2.63", "Synapse X  - v2.63")
     end
     for _, child in ipairs(instance:GetChildren()) do
         replaceImage(child)
@@ -48,9 +48,6 @@ local function findAndModifyImageLabel()
 end
 
 findAndModifyImageLabel()
-
-wait(0.1)
-
 local function find1AndModifyImageLabel()
     local function searchImage1Label(instance)
         if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
@@ -58,15 +55,22 @@ local function find1AndModifyImageLabel()
             if parent and parent:IsA("Frame") then
                 if parent.BackgroundColor3 == Color3.new(35/255, 35/255, 35/255) then
                     parent.BackgroundColor3 = Color3.new(45/255, 45/255, 45/255)
-                    parent.Size = UDim2.new(0.5, 0, 0.5, 0)
+                    parent.Size = UDim2.new(0.5, 0, 0.3, 0)
                     parent.BackgroundTransparency = 0
+                    local h = Instance.new("Frame")
+                    h.Parent = parent
+                    h.Size = UDim2.new(1,0,0.01)
+                    h.Position = UDim2.new(0,0,-0.01)
+                    h.BackgroundColor3 = Color3.fromRGB(0,100,150)
+                    h.BorderSizePixel = 0
                     local tabs = parent:FindFirstChild("tabs")
                     if tabs then
                         local Editor = tabs:FindFirstChild("Editor")
                         if Editor then
                             local Edit = Editor:FindFirstChild("Edit")
                             if Edit then
-                                Edit.Position = UDim2.new(0, 0, 0, 0)
+                                Edit.Position = UDim2.new(0.015, 0, 0, 0.5)
+                                Edit.Size = UDim2.new(0.7,0,0.99)
                                 Edit.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
                                 local ScrollingFrame = Edit:FindFirstChild("ScrollingFrame")
                                 if ScrollingFrame then
@@ -144,6 +148,8 @@ local function find1AndModifyImageLabel()
                                             if Frame then
                                                 Frame.Position = UDim2.new(0.73, 0, 0.025, 0)
                                                 Frame.Size = UDim2.new(0.26, 0, 0.95, 0)
+                                                Frame.BackgroundColor3 = Color3.fromRGB(54,54,54)
+                                                Frame.Visible = true
                                                 local mics = tabs:FindFirstChild("Miscellaneous")
                                                 if mics then
                                                     local re = Instance.new("TextLabel")
@@ -194,6 +200,43 @@ local function find1AndModifyImageLabel()
                                                     B.MouseButton1Click:Connect(function()
                                                         loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Simple-AntiLag-and-Netless-script-15583"))()
                                                     end)
+                                                    local title = parent:FindFirstChild("Title")
+                                                    if title then
+                                                        title.BackgroundColor3 = Color3.fromRGB(54,54,54)
+                                                        title.BackgroundTransparency = 0
+                                                        title.Font = Enum.Font.SourceSans
+                                                        title.Text = "Synapse X - v2.63"
+                                                        title.TextSize = 15
+                                                        local decors = parent:GetDescendants()
+                                                        for _, decor in ipairs(decors) do
+                                                            if decor.Name == "Decor" then
+                                                                decor.Visible = false
+                                                                local logo = parent:FindFirstChild("Logo")
+                                                                if logo then
+                                                                    logo.Rotation = 0
+                                                                    logo.Size = UDim2.new(0.04,0,0.0725)
+                                                                    logo.Position = UDim2.new(0.001,0,0.037)
+                                                                    local tl2 = Frame:FindFirstChild("TextLabel")
+                                                                    if tl2 then
+                                                                        tl2.Visible = true
+                                                                        tl2.Text = "Script Folder"
+                                                                        tl2.BackgroundColor3 = Color3.fromRGB(54,54,54)
+                                                                        local sc2 Frame:FindFirstChild("ScrollingFrame")
+                                                                        sc2.Position = UDim2.new(0,0,-0.9,0)
+                                                                        sc2.BackgroundColor3 = Color3.fromRGB(54,54,54)
+                                                                        sc2.Size = UDim2.new(1,0,1,0)
+                                                                        for _, script in ipairs(scripts) do
+                                                                            if script.Name == "Script" then
+                                                                                script.TextXAlignment = Enum.TextXAlignment.Left
+                                                                                script.TextSize = 12
+                                                                                script.TextScaled = false
+                                                                             end
+                                                                         end
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
+                                                    end
                                                 end
                                             end
                                         end
