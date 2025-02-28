@@ -1,21 +1,21 @@
 local function replaceImage(instance)
     if instance:IsA("TextLabel") or instance:IsA("TextBox") or instance:IsA("TextButton") then
-        instance.Text = string.gsub(instance.Text, "Cryptic", "Synapse X  - v2.63")
+        instance.Text = string.gsub(instance.Text, "Cryptic", "Synapse X - v2.63")
     end
     for _, child in ipairs(instance:GetChildren()) do
         replaceImage(child)
     end
 end
-replaceImage(game)
+
 local function replaceText(instance)
     if instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
-        instance.Image = string.gsub(instance.Image, "rbxassetid://19005999590", "rbxassetid://103898756701702"
+        instance.Image = string.gsub(instance.Image, "rbxassetid://19005999590", "rbxassetid://103898756701702")
     end
     for _, child in ipairs(instance:GetChildren()) do
         replaceText(child)
     end
 end
-
+replaceImage(game)
 replaceText(game)
 local function findAndModifyImageLabel()
     local function searchImageLabel(instance)
