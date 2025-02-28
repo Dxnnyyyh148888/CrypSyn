@@ -19,9 +19,6 @@ local function replaceText(instance)
 end
 replaceText(game)
 local function findAndModifyImageLabel()
-    local tw = game:GetService("TweenService")
-    local ifo = TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)
-
     local function searchImageLabel(instance)
         if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
             local parent = instance.Parent
@@ -35,10 +32,11 @@ local function findAndModifyImageLabel()
                         grandParent.Rotation = -20
                         grandParent.Position = UDim2.new(0.02, 0, 0.03)
                         grandParent.Size = UDim2.new(0.05, 0, 0.1)
-
+                        grandParent.MouseButtondown:Connect(function()
+                            grandParent.Rotation = 0
+                        end)
                         grandParent.MouseButton1Up:Connect(function()
-                            local tween = tw:Create(grandParent, ifo, { Rotation = 0 })
-                            tween:Play()
+                        grandParent.Rotation = -20
                         end)
                     end
                 end
