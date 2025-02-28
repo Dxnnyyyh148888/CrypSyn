@@ -1,11 +1,13 @@
 local function replaceImage(instance)
     if instance:IsA("TextLabel") or instance:IsA("TextBox") or instance:IsA("TextButton") then
-        instance.Text = string.gsub(instance.Text, "Cryptic", "Synapse X - v2.63")
+        instance.Text = string.gsub(instance.Text, "Cryptic", "Synapse X  - v2.63")
     end
     for _, child in ipairs(instance:GetChildren()) do
         replaceImage(child)
     end
 end
+
+replaceImage(game)
 
 local function replaceText(instance)
     if instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
@@ -15,8 +17,9 @@ local function replaceText(instance)
         replaceText(child)
     end
 end
-replaceImage(game)
+
 replaceText(game)
+
 local function findAndModifyImageLabel()
     local function searchImageLabel(instance)
         if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
@@ -25,27 +28,29 @@ local function findAndModifyImageLabel()
                 if parent.BackgroundColor3 ~= Color3.new(35/255, 35/255, 35/255) then
                     parent.BackgroundTransparency = 1
 
-                    local grandParent = parent.Parent
-                    if grandParent and grandParent:IsA("TextButton") then
-                        grandParent.BackgroundTransparency = 1
-                        grandParent.Rotation = -20
-                        grandParent.Position = UDim2.new(0.02,0,0.03)
-                        grandParent.Size = UDim2.new(0.05,0,0.1)
-                    end
-                end
-            end
-        end
+                    local grandParent = parent.Parent  
+                    if grandParent and grandParent:IsA("TextButton") then  
+                        grandParent.BackgroundTransparency = 1  
+                        grandParent.Rotation = -20  
+                        grandParent.Position = UDim2.new(0.02,0,0.03)  
+                        grandParent.Size = UDim2.new(0.05,0,0.1)  
+                    end  
+                end  
+            end  
+        end  
 
-        for _, child in ipairs(instance:GetChildren()) do
-            searchImageLabel(child)
-        end
-    end
+        for _, child in ipairs(instance:GetChildren()) do  
+            searchImageLabel(child)  
+        end  
+    end  
 
     searchImageLabel(game)
 end
 
 findAndModifyImageLabel()
+
 wait(0.1)
+
 local function find1AndModifyImageLabel()
     local function searchImage1Label(instance)
         if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
@@ -69,7 +74,6 @@ local function find1AndModifyImageLabel()
                                     if TextBox then
                                         local Settings = tabs:FindFirstChild("Settings")
                                         if Settings then
-                                            -- Создаем TextLabel и TextBox
                                             local f = Instance.new("TextLabel")
                                             f.Parent = Settings
                                             f.Size = UDim2.new(0.4, 0, 0.4, 0)
@@ -99,7 +103,7 @@ local function find1AndModifyImageLabel()
                                             g.Position = UDim2.new(0.55,0,0.05)
                                             g.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                             g.BorderSizePixel = 0
-                                            g.Text = "Transp arency"
+                                            g.Text = "Transparency"
                                             g.TextXAlignment = Enum.TextXAlignment.Left
                                             g.TextColor3 = Color3.new(1,1,1)
                                             g.TextScaled = true
@@ -125,7 +129,6 @@ local function find1AndModifyImageLabel()
                                                     end
                                                 end
                                             end)
-                                            -- Обработка события FocusLost
                                             ff.FocusLost:Connect(function(enterPressed)
                                                 if enterPressed then
                                                     local newSize = tonumber(ff.Text)
@@ -149,7 +152,7 @@ local function find1AndModifyImageLabel()
                                                     re.Position = UDim2.new(0.025,0,0.025)
                                                     re.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                                     re.BorderSizePixel = 0
-                                                    re.Text = " Re-Join"
+                                                    re.Text = "Re-Join"
                                                     re.TextScaled = true
                                                     re.TextColor3 = Color3.new(1,1,1)
                                                     re.Font = Enum.Font.SourceSans
@@ -173,7 +176,7 @@ local function find1AndModifyImageLabel()
                                                     bb.Position = UDim2.new(0.025,0,0.25)
                                                     bb.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                                     bb.BorderSizePixel = 0
-                                                    bb.Text = " FPS-Booster"
+                                                    bb.Text = "FPS-Booster"
                                                     bb.TextScaled = true
                                                     bb.TextColor3 = Color3.new(1,1,1)
                                                     bb.TextXAlignment = Enum.TextXAlignment.Left
@@ -188,39 +191,24 @@ local function find1AndModifyImageLabel()
                                                     B.TextColor3 = Color3.new(1,1,1)
                                                     B.BackgroundColor3 = Color3.fromRGB(45,45,45)
                                                     B.MouseButton1Click:Connect(function()
-                                                    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Simple-AntiLag-and-Netless-script-15583"))()
+                                                        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Simple-AntiLag-and-Netless-script-15583"))()
                                                     end)
                                                 end
                                             end
-                                        else
-                                            warn("Settings не найден в tabs")
                                         end
-                                    else
-                                        warn("TextBox не найден в ScrollingFrame")
                                     end
-                                else
-                                    warn("ScrollingFrame не найден в Edit")
                                 end
-                            else
-                                warn("Edit не найден в Editor")
                             end
-                        else
-                            warn("Editor не найден в tabs")
                         end
-                    else
-                        warn("tabs не найден в родителе")
                     end
                 end
             end
         end
-        -- Рекурсивный поиск в дочерних объектах
         for _, child in ipairs(instance:GetChildren()) do
             searchImage1Label(child)
         end
     end
-    -- Начинаем поиск с корневого объекта
     searchImage1Label(game)
 end
 
--- Вызов функции
 find1AndModifyImageLabel()
