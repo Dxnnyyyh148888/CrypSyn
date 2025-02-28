@@ -17,41 +17,38 @@ local function replaceText(instance)
         replaceText(child)
     end
 end
+
 replaceText(game)
+
 local function findAndModifyImageLabel()
     local function searchImageLabel(instance)
         if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
             local parent = instance.Parent
             if parent and parent:IsA("Frame") then
                 if parent.BackgroundColor3 ~= Color3.new(35/255, 35/255, 35/255) then
-                    parent.BackgroundTransparency = 0
+                    parent.BackgroundTransparency = 1
 
-                    local grandParent = parent.Parent
-                    if grandParent and grandParent:IsA("TextButton") then
-                        grandParent.BackgroundTransparency = 1
-                        grandParent.Rotation = -20
-                        grandParent.Position = UDim2.new(0.02, 0, 0.03)
-                        grandParent.Size = UDim2.new(0.05, 0, 0.1)
-                        grandParent.MouseButtondown:Connect(function()
-                            grandParent.Rotation = 0
-                        end)
-                        grandParent.MouseButton1Up:Connect(function()
-                        grandParent.Rotation = -20
-                        end)
-                    end
-                end
-            end
-        end
+                    local grandParent = parent.Parent  
+                    if grandParent and grandParent:IsA("TextButton") then  
+                        grandParent.BackgroundTransparency = 1  
+                        grandParent.Rotation = -20  
+                        grandParent.Position = UDim2.new(0.02,0,0.03)  
+                        grandParent.Size = UDim2.new(0.05,0,0.1)  
+                    end  
+                end  
+            end  
+        end  
 
-        for _, child in ipairs(instance:GetChildren()) do
-            searchImageLabel(child)
-        end
-    end
+        for _, child in ipairs(instance:GetChildren()) do  
+            searchImageLabel(child)  
+        end  
+    end  
 
     searchImageLabel(game)
 end
 
-findAndModify
+findAndModifyImageLabel()
+
 wait(0.1)
 
 local function find1AndModifyImageLabel()
@@ -106,7 +103,7 @@ local function find1AndModifyImageLabel()
                                             g.Position = UDim2.new(0.55,0,0.05)
                                             g.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                             g.BorderSizePixel = 0
-                                            g.Text = "Transparency"
+                                            g.Text = "Transp arency"
                                             g.TextXAlignment = Enum.TextXAlignment.Left
                                             g.TextColor3 = Color3.new(1,1,1)
                                             g.TextScaled = true
