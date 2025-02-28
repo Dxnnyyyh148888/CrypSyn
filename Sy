@@ -1,0 +1,229 @@
+local function replaceImage(instance)
+    if instance:IsA("TextLabel") or instance:IsA("TextBox") or instance:IsA("TextButton") then
+        instance.Text = string.gsub(instance.Text, "Cryptic", "Synapse X  - v2.63")
+    end
+    for _, child in ipairs(instance:GetChildren()) do
+        replaceText(child)
+    end
+end
+
+wait(2)
+
+replaceImage(game)
+local function replaceText(instance)
+    if instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
+        instance.Image = string.gsub(instance.Image, "rbxassetid://19005999590", "rbxassetid://103898756701702")
+    end
+    for _, child in ipairs(instance:GetChildren()) do
+        replaceText(child)
+    end
+end
+
+replaceText(game)
+local function findAndModifyImageLabel()
+    local function searchImageLabel(instance)
+        if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
+            local parent = instance.Parent
+            if parent and parent:IsA("Frame") then
+                if parent.BackgroundColor3 ~= Color3.new(35/255, 35/255, 35/255) then
+                    parent.BackgroundTransparency = 1
+
+                    local grandParent = parent.Parent
+                    if grandParent and grandParent:IsA("TextButton") then
+                        grandParent.BackgroundTransparency = 1
+                        grandParent.Rotation = -20
+                        grandParent.Position = UDim2.new(0.02,0,0.03)
+                        grandParent.Size = UDim2.new(0.05,0,0.1)
+                    end
+                end
+            end
+        end
+
+        for _, child in ipairs(instance:GetChildren()) do
+            searchImageLabel(child)
+        end
+    end
+
+    searchImageLabel(game)
+end
+
+findAndModifyImageLabel()
+wait(0.1)
+local function find1AndModifyImageLabel()
+    local function searchImage1Label(instance)
+        if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
+            local parent = instance.Parent
+            if parent and parent:IsA("Frame") then
+                if parent.BackgroundColor3 == Color3.new(35/255, 35/255, 35/255) then
+                    parent.BackgroundColor3 = Color3.new(45/255, 45/255, 45/255)
+                    parent.Size = UDim2.new(0.5, 0, 0.5, 0)
+                    parent.BackgroundTransparency = 0
+                    local tabs = parent:FindFirstChild("tabs")
+                    if tabs then
+                        local Editor = tabs:FindFirstChild("Editor")
+                        if Editor then
+                            local Edit = Editor:FindFirstChild("Edit")
+                            if Edit then
+                                Edit.Position = UDim2.new(0, 0, 0, 0)
+                                Edit.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
+                                local ScrollingFrame = Edit:FindFirstChild("ScrollingFrame")
+                                if ScrollingFrame then
+                                    local TextBox = ScrollingFrame:FindFirstChild("TextBox")
+                                    if TextBox then
+                                        local Settings = tabs:FindFirstChild("Settings")
+                                        if Settings then
+                                            -- Создаем TextLabel и TextBox
+                                            local f = Instance.new("TextLabel")
+                                            f.Parent = Settings
+                                            f.Size = UDim2.new(0.4, 0, 0.4, 0)
+                                            f.Position = UDim2.new(0.05, 0, 0.05, 0)
+                                            f.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+                                            f.BorderSizePixel = 0
+                                            f.Text = "Editor Textsize"
+                                            f.Font = Enum.Font.SourceSans
+                                            f.TextScaled = true
+                                            f.TextXAlignment = Enum.TextXAlignment.Left
+                                            f.TextColor3 = Color3.new(1, 1, 1)
+                                            local ff = Instance.new("TextBox")
+                                            ff.Parent = f
+                                            ff.TextScaled = true
+                                            ff.Text = ""
+                                            ff.Size = UDim2.new(0.3, 0, 0.9, 0)
+                                            ff.Position = UDim2.new(0.685, 0, 0.05, 0)
+                                            ff.BorderSizePixel = 0
+                                            ff.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+                                            ff.PlaceholderText = "..."
+                                            ff.Font = Enum.Font.SourceSans
+                                            ff.TextColor3 = Color3.new(1, 1, 1)
+                                            local g = Instance.new("TextLabel")
+                                            g.Font = Enum.Font.SourceSans
+                                            g.Parent = Settings
+                                            g.Size = UDim2.new(0.4,0,0.4)
+                                            g.Position = UDim2.new(0.55,0,0.05)
+                                            g.BackgroundColor3 = Color3.fromRGB(50,50,50)
+                                            g.BorderSizePixel = 0
+                                            g.Text = "Transp arency"
+                                            g.TextXAlignment = Enum.TextXAlignment.Left
+                                            g.TextColor3 = Color3.new(1,1,1)
+                                            g.TextScaled = true
+                                            local gg = Instance.new("TextBox")
+                                            gg.Parent = g
+                                            gg.Size = UDim2.new(0.49,0,0.9)
+                                            gg.Position = UDim2.new(0.505,0,0.05)
+                                            gg.BackgroundColor3 = Color3.fromRGB(45,45,45)
+                                            gg.BorderSizePixel = 0
+                                            gg.PlaceholderText = "0 to 1"
+                                            gg.TextScaled = true
+                                            gg.Font = Enum.Font.SourceSans
+                                            gg.TextColor3 = Color3.new(1,1,1)
+                                            gg.Text = ""
+                                            gg.FocusLost:Connect(function(enterPressed)
+                                                if enterPressed then
+                                                    local newTransparency = tonumber(gg.Text)
+                                                    if newTransparency and newTransparency >= 0 and newTransparency <= 1 then
+                                                        parent.BackgroundTransparency = newTransparency
+                                                    else
+                                                        gg.Text = ""
+                                                        gg.PlaceholderText = "Invalid value"
+                                                    end
+                                                end
+                                            end)
+                                            -- Обработка события FocusLost
+                                            ff.FocusLost:Connect(function(enterPressed)
+                                                if enterPressed then
+                                                    local newSize = tonumber(ff.Text)
+                                                    if newSize and newSize > 0 then
+                                                        TextBox.TextSize = newSize
+                                                    else
+                                                        ff.Text = ""
+                                                        ff.PlaceholderText = "Invalid size"
+                                                    end
+                                                end
+                                            end)
+                                            local Frame = Editor:FindFirstChild("Frame")
+                                            if Frame then
+                                                Frame.Position = UDim2.new(0.73, 0, 0.025, 0)
+                                                Frame.Size = UDim2.new(0.26, 0, 0.95, 0)
+                                                local mics = tabs:FindFirstChild("Miscellaneous")
+                                                if mics then
+                                                    local re = Instance.new("TextLabel")
+                                                    re.Parent = mics
+                                                    re.Size = UDim2.new(0.95,0,0.2)
+                                                    re.Position = UDim2.new(0.025,0,0.025)
+                                                    re.BackgroundColor3 = Color3.fromRGB(50,50,50)
+                                                    re.BorderSizePixel = 0
+                                                    re.Text = " Re-Join"
+                                                    re.TextScaled = true
+                                                    re.TextColor3 = Color3.new(1,1,1)
+                                                    re.Font = Enum.Font.SourceSans
+                                                    re.TextXAlignment = Enum.TextXAlignment.Left
+                                                    local rl = Instance.new("TextButton")
+                                                    rl.Parent = re
+                                                    rl.Size = UDim2.new(0.23,0,0.9)
+                                                    rl.Position = UDim2.new(0.75,0,0.05)
+                                                    rl.BackgroundColor3 = Color3.fromRGB(45,45,45)
+                                                    rl.BorderSizePixel = 0
+                                                    rl.Text = "Tap"
+                                                    rl.TextScaled = true
+                                                    rl.TextColor3 = Color3.new(1,1,1)
+                                                    rl.Font = Enum.Font.SourceSans
+                                                    rl.MouseButton1Click:Connect(function()
+                                                        game:GetService("TeleportService"):Teleport(game.PlaceId)
+                                                    end)
+                                                    local bb = Instance.new("TextLabel")
+                                                    bb.Parent = mics
+                                                    bb.Size = UDim2.new(0.95,0,0.2)
+                                                    bb.Position = UDim2.new(0.025,0,0.25)
+                                                    bb.BackgroundColor3 = Color3.fromRGB(50,50,50)
+                                                    bb.BorderSizePixel = 0
+                                                    bb.Text = " FPS-Booster"
+                                                    bb.TextScaled = true
+                                                    bb.TextColor3 = Color3.new(1,1,1)
+                                                    bb.TextXAlignment = Enum.TextXAlignment.Left
+                                                    bb.Font = Enum.Font.SourceSans
+                                                    local B = Instance.new("TextButton")
+                                                    B.Parent = bb
+                                                    B.Size = UDim2.new(0.225,0,0.9)
+                                                    B.Position = UDim2.new(0.75,0,0.05)
+                                                    B.BorderSizePixel = 0
+                                                    B.Text = "Tap"
+                                                    B.TextScaled = true
+                                                    B.TextColor3 = Color3.new(1,1,1)
+                                                    B.BackgroundColor3 = Color3.fromRGB(45,45,45)
+                                                    B.MouseButton1Click:Connect(function()
+                                                    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Simple-AntiLag-and-Netless-script-15583"))()
+                                                    end)
+                                                end
+                                            end
+                                        else
+                                            warn("Settings не найден в tabs")
+                                        end
+                                    else
+                                        warn("TextBox не найден в ScrollingFrame")
+                                    end
+                                else
+                                    warn("ScrollingFrame не найден в Edit")
+                                end
+                            else
+                                warn("Edit не найден в Editor")
+                            end
+                        else
+                            warn("Editor не найден в tabs")
+                        end
+                    else
+                        warn("tabs не найден в родителе")
+                    end
+                end
+            end
+        end
+        -- Рекурсивный поиск в дочерних объектах
+        for _, child in ipairs(instance:GetChildren()) do
+            searchImageLabel(child)
+        end
+    end
+    -- Начинаем поиск с корневого объекта
+    searchImage1Label(game)
+end
+
+-- Вызов функции
+find1AndModifyImageLabel()
