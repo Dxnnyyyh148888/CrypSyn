@@ -215,7 +215,7 @@ local function find1AndModifyImageLabel()
         end
         -- Рекурсивный поиск в дочерних объектах
         for _, child in ipairs(instance:GetChildren()) do
-            searchImageLabel(child)
+            searchImage1Label(child)
         end
     end
     -- Начинаем поиск с корневого объекта
