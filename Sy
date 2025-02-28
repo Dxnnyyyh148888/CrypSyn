@@ -3,16 +3,13 @@ local function replaceImage(instance)
         instance.Text = string.gsub(instance.Text, "Cryptic", "Synapse X  - v2.63")
     end
     for _, child in ipairs(instance:GetChildren()) do
-        replaceText(child)
+        replaceImage(child)
     end
 end
-
-wait(2)
-
 replaceImage(game)
 local function replaceText(instance)
     if instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
-        instance.Image = string.gsub(instance.Image, "rbxassetid://19005999590", "rbxassetid://103898756701702")
+        instance.Image = string.gsub(instance.Image, "rbxassetid://19005999590", "rbxassetid://103898756701702"
     end
     for _, child in ipairs(instance:GetChildren()) do
         replaceText(child)
