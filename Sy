@@ -17,23 +17,30 @@ local function replaceText(instance)
         replaceText(child)
     end
 end
-
+local tw = game:GetService("TweenService")
 replaceText(game)
-
+local ifo = TweenInfo.new(1,Enum.EasingStyle.Quint,Enum.EasingDirection.Out)
 local function findAndModifyImageLabel()
     local function searchImageLabel(instance)
         if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
             local parent = instance.Parent
             if parent and parent:IsA("Frame") then
                 if parent.BackgroundColor3 ~= Color3.new(35/255, 35/255, 35/255) then
-                    parent.BackgroundTransparency = 1
-
+                    parent.BackgroundTransparency = 0
                     local grandParent = parent.Parent  
                     if grandParent and grandParent:IsA("TextButton") then  
                         grandParent.BackgroundTransparency = 1  
                         grandParent.Rotation = -20  
                         grandParent.Position = UDim2.new(0.02,0,0.03)  
-                        grandParent.Size = UDim2.new(0.05,0,0.1)  
+                        grandParent.Size = UDim2.new(0.05,0,0.1)
+                        grandParent.MouseButton1Up:Connect(function()
+                        local he = tw:Create(grandParent,ifo,{Rotation = 0})
+                        he:Play()
+                        end)
+                        local heh = tw:Create(grandParent,ifo,{Rotation = -20})
+                        grandParent.MouseButton1Up:Connect(funtion()
+                        heh:Play()
+                        end)
                     end  
                 end  
             end  
