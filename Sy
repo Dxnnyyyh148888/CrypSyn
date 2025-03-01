@@ -260,14 +260,16 @@ local function find1AndModifyImageLabel()
                                                                         tl2.Text = "Script Folder"
                                                                         tl2.BackgroundColor3 = Color3.fromRGB(54,54,54)
                                                                         local sc2 Frame:FindFirstChild("ScrollingFrame")
-                                                                        sc2.Position = UDim2.new(0,0,-0.9,0)
-                                                                        sc2.BackgroundColor3 = Color3.fromRGB(54,54,54)
-                                                                        sc2.Size = UDim2.new(1,0,1,0)
-                                                                        for _, script in ipairs(scripts) do
-                                                                            if script.Name == "Script" then
-                                                                                script.TextXAlignment = Enum.TextXAlignment.Left
-                                                                                script.TextSize = 12
-                                                                                script.TextScaled = false
+                                                                        if sc2 then
+                                                                            sc2.Position = UDim2.new(0,0,-0.9,0)
+                                                                            sc2.BackgroundColor3 = Color3.fromRGB(54,54,54)
+                                                                            sc2.Size = UDim2.new(1,0,1,0)
+                                                                            for _, script in ipairs(scripts) do
+                                                                                if script.Name == "Script" then
+                                                                                    script.TextXAlignment = Enum.TextXAlignment.Left
+                                                                                    script.TextSize = 12
+                                                                                    script.TextScaled = false
+                                                                                end
                                                                             end
                                                                         end
                                                                     end
