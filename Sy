@@ -138,27 +138,27 @@ local function find1AndModifyImageLabel()
                                             end)
                                             local kk = Instance.new("TextLabel")
                                             kk.Parent = Settings
-                                            kk.Size = UDim2.new(0.4,0,0.4)
-                                            kk.Position = UDim2.new(0.55,0,0.05)
-                                            kk.BackgroundColor3 = Color3.fromRGB(50,50,50)
+                                            kk.Size = UDim2.new(0.4, 0, 0.4, 0)
+                                            kk.Position = UDim2.new(0.55, 0, 0.05, 0)
+                                            kk.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                                             kk.BorderSizePixel = 0
                                             kk.Text = "Red Cap:з"
                                             kk.TextXAlignment = Enum.TextXAlignment.Left
                                             kk.Font = Enum.Font.SourceSans
                                             kk.TextScaled = true
-                                            kk.TextColor3 = Color3.new(1,1,1)
+                                            kk.TextColor3 = Color3.new(1, 1, 1)
                                             local kkk = Instance.new("TextButton")
                                             kkk.Parent = kk
-                                            kkk.Size = UDim2.new(0.3,0,0.5)
-                                            kkk.Position = UDim2.new(0.65,0,0.25)
-                                            kkk.BackgroundColor3 = Color3.fromRGB(0,0,200)
+                                            kkk.Size = UDim2.new(0.3, 0, 0.5, 0)
+                                            kkk.Position = UDim2.new(0.65, 0, 0.25, 0)
+                                            kkk.BackgroundColor3 = Color3.fromRGB(0, 0, 200)
                                             kkk.BorderSizePixel = 0
                                             kkk.MouseButton1Click:Connect(function()
-                                            if h.Visible == false then
-                                                h.Visible = true
-                                              else
-                                                h.Visible = false
-                                              end
+                                                if h.Visible == false then
+                                                    h.Visible = true
+                                                else
+                                                    h.Visible = false
+                                                end
                                             end)
                                             local Frame = Editor:FindFirstChild("Frame")
                                             if Frame then
