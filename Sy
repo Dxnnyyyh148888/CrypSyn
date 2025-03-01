@@ -200,6 +200,44 @@ local function find1AndModifyImageLabel()
                                                     B.MouseButton1Click:Connect(function()
                                                         loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Simple-AntiLag-and-Netless-script-15583"))()
                                                     end)
+                                                    local op = Instance.new("TextButton")
+                                                    op.Parent = mics
+                                                    op.Size = UDim2.new(0.3,0,0.15)
+                                                    op.Position = UDim2.new(0.025,0,0.82)
+                                                    op.BackgroundColor3 = Color3.fromRGB(50,50,50)
+                                                    op.BorderSizePixel = 0
+                                                    op.Text = "Console"
+                                                    op.TextScaled = true
+                                                    op.TextColor3 = Color3.new(1,1,1)
+                                                    op.MouseButton1Click:Connect(function()
+                                                    game:GetService("StarterGui"):SetCore("DevConsoleVisible", true)
+                                                    end)
+                                                    local v = Instance.new("TextButton")
+                                                    v.Parent = mics
+                                                    v.Size = UDim2.new(0.3,0,0.15)
+                                                    v.Position = UDim2.new(0.35,0,0.82)
+                                                    v.BackgroundColor3 = Color3.fromRGB(50,50,50)
+                                                    v.BorderSizePixel = 0
+                                                    v.Text = "UNC Checker"
+                                                    v.Font = Enum.Font.SourceSans
+                                                    v.TextScaled = true
+                                                    v.TextColor3 = Color3.new(1,1,1)
+                                                    v.MouseButton1Click:Connect(function()
+                                                    loadstring(game:HttpGet("https://roguedz.xyz/vulnerability-checker-gui.lua"))()
+                                                    end)
+                                                    local mm = Instance.new("TextButton")
+                                                    mm.Parent = mics
+                                                    mm.Size = UDim2.new(0.3,0,0.15)
+                                                    mm.Position = UDim2.new(0.675,0,0.82)
+                                                    mm.BackgroundColor3 = Color3.fromRGB(50,50,50)
+                                                    mm.Text = "Script Hub"
+                                                    mm.TextScaled = true
+                                                    mm.Font = Enum.Font.SourceSans
+                                                    mm.TextColor3 = Color3.new(1,1,1)
+                                                    mm.BorderSizePixel = 0
+                                                    mm.MouseButton1Click:Connect(function()
+                                                    loadstring(game:HttpGet("https://raw.githubusercontent.com/Dxnnyyyh148888/Shub/refs/heads/main/Main"))()
+                                                    end)
                                                     local title = parent:FindFirstChild("Title")
                                                     if title then
                                                         title.BackgroundColor3 = Color3.fromRGB(54,54,54)
@@ -255,4 +293,4 @@ local function find1AndModifyImageLabel()
     searchImage1Label(game)
 end
 
-find1AndModifyImageLabel()
+find1AndModifyImageLabel
