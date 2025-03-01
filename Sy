@@ -139,10 +139,10 @@ local function find1AndModifyImageLabel()
                                             local kk = Instance.new("TextLabel")
                                             kk.Parent = Settings
                                             kk.Size = UDim2.new(0.4, 0, 0.4, 0)
-                                            kk.Position = UDim2.new(0.55, 0, 0.05, 0)
+                                            kk.Position = UDim2.new(0.05, 0, 0.55, 0)
                                             kk.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                                             kk.BorderSizePixel = 0
-                                            kk.Text = "Red Cap:з"
+                                            kk.Text = "Reddd Capp:з"
                                             kk.TextXAlignment = Enum.TextXAlignment.Left
                                             kk.Font = Enum.Font.SourceSans
                                             kk.TextScaled = true
