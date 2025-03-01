@@ -1,14 +1,4 @@
-local function replaceImage(instance)
-    if instance:IsA("TextLabel") or instance:IsA("TextBox") or instance:IsA("TextButton") then
-        instance.Text = string.gsub(instance.Text, "Synapse X  - v2.63", "Synapse X  - v2.63")
-    end
-    for _, child in ipairs(instance:GetChildren()) do
-        replaceImage(child)
-    end
-end
-
-replaceImage(game)
-
+-- god seeing you..
 local function replaceText(instance)
     if instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
         instance.Image = string.gsub(instance.Image, "rbxassetid://19005999590", "rbxassetid://103898756701702")
@@ -62,8 +52,9 @@ local function find1AndModifyImageLabel()
                     h.Parent = parent
                     h.Size = UDim2.new(1,0,0.01)
                     h.Position = UDim2.new(0,0,-0.01)
-                    h.BackgroundColor3 = Color3.fromRGB(0,100,150)
+                    h.BackgroundColor3 = Color3.fromRGB(150,0,0)
                     h.BorderSizePixel = 0
+                    h.Visible = false
                     local tabs = parent:FindFirstChild("tabs")
                     if tabs then
                         local Editor = tabs:FindFirstChild("Editor")
@@ -144,6 +135,30 @@ local function find1AndModifyImageLabel()
                                                         ff.PlaceholderText = "Invalid size"
                                                     end
                                                 end
+                                            end)
+                                            local kk = Instance.new("TextLabel")
+                                            kk.Parent = Settings
+                                            kk.Size = UDim2.new(0.4,0,0.4)
+                                            kk.Position = UDim2.new(0.55,0,0.05)
+                                            kk.BackgroundColor3 = Color3.fromRGB(50,50,50)
+                                            kk.BorderSizePixel = 0
+                                            kk.Text = "Red Cap:з"
+                                            kk.TextXAlignment = Enum.TextXAlignment.Left
+                                            kk.Font = Enum.Font.SourceSans
+                                            kk.TextScaled = true
+                                            kk.TextColor3 = Color3.new(1,1,1)
+                                            local kkk = Instance.new(TextButton")
+                                            kkk.Parent = kk
+                                            kkk.Size = UDim2.new(0.3,0,0.5)
+                                            kkk.Position = UDim2.new(0.65,0,0.25)
+                                            kkk.BackgroundColor3 = Color3.fromRGB(0,0,200)
+                                            kkk.BorderSizePixel = 0
+                                            kkk.MouseButton1Click:Connect(function()
+                                            if h.Visible == false then
+                                                h.Visible = true
+                                              else
+                                                h.Visible = false
+                                              end
                                             end)
                                             local Frame = Editor:FindFirstChild("Frame")
                                             if Frame then
