@@ -293,4 +293,4 @@ local function find1AndModifyImageLabel()
     searchImage1Label(game)
 end
 
-find1AndModifyImageLabel
+find1AndModifyImageLabel()
