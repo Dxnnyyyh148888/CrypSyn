@@ -48,6 +48,7 @@ local function findAndModifyImageLabel()
 end
 
 findAndModifyImageLabel()
+wait(0.1)
 local function find1AndModifyImageLabel()
     local function searchImage1Label(instance)
         if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
