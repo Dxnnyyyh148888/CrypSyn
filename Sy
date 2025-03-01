@@ -268,8 +268,8 @@ local function find1AndModifyImageLabel()
                                                                                 script.TextXAlignment = Enum.TextXAlignment.Left
                                                                                 script.TextSize = 12
                                                                                 script.TextScaled = false
-                                                                             end
-                                                                         end
+                                                                            end
+                                                                        end
                                                                     end
                                                                 end
                                                             end
