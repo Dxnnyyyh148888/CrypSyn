@@ -72,13 +72,13 @@ local function find1AndModifyImageLabel()
                                         if Settings then
                                             local f = Instance.new("TextLabel")
                                             f.Parent = Settings
-                                            f.Size = UDim2.new(0.4, 0, 0.4, 0)
+                                            f.Size = UDim2.new(0.4, 0, 0.2, 0)
                                             f.Position = UDim2.new(0.05, 0, 0.05, 0)
                                             f.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                                             f.BorderSizePixel = 0
-                                            f.Text = "Editor Textsize"
+                                            f.Text = " Editor Textsize"
                                             f.Font = Enum.Font.SourceSans
-                                            f.TextScaled = true
+                                            f.TextSize = 15
                                             f.TextXAlignment = Enum.TextXAlignment.Left
                                             f.TextColor3 = Color3.new(1, 1, 1)
                                             local ff = Instance.new("TextBox")
@@ -95,11 +95,11 @@ local function find1AndModifyImageLabel()
                                             local g = Instance.new("TextLabel")
                                             g.Font = Enum.Font.SourceSans
                                             g.Parent = Settings
-                                            g.Size = UDim2.new(0.4,0,0.4)
+                                            g.Size = UDim2.new(0.4,0,0.2)
                                             g.Position = UDim2.new(0.55,0,0.05)
                                             g.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                             g.BorderSizePixel = 0
-                                            g.Text = "Transparency"
+                                            g.Text = " Transparency"
                                             g.TextXAlignment = Enum.TextXAlignment.Left
                                             g.TextColor3 = Color3.new(1,1,1)
                                             g.TextSize = 13
@@ -138,8 +138,8 @@ local function find1AndModifyImageLabel()
                                             end)
                                             local kk = Instance.new("TextLabel")
                                             kk.Parent = Settings
-                                            kk.Size = UDim2.new(0.4, 0, 0.4, 0)
-                                            kk.Position = UDim2.new(0.05, 0, 0.55, 0)
+                                            kk.Size = UDim2.new(0.4, 0, 0.2, 0)
+                                            kk.Position = UDim2.new(0.05, 0, 0.35, 0)
                                             kk.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                                             kk.BorderSizePixel = 0
                                             kk.Text = "Red Cap:з"
