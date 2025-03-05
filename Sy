@@ -271,21 +271,25 @@ local function find1AndModifyImageLabel()
                                                                     logo.Rotation = 0
                                                                     logo.Size = UDim2.new(0.04,0,0.0725)
                                                                     logo.Position = UDim2.new(0.001,0,0.037)
-                                                                    local tl2 = Frame:FindFirstChild("TextLabel")
-                                                                    if tl2 then
-                                                                        tl2.Visible = true
-                                                                        tl2.Text = "Script Folder"
-                                                                        tl2.BackgroundColor3 = Color3.fromRGB(54,54,54)
-                                                                        local sc2 Frame:FindFirstChild("ScrollingFrame")
-                                                                        if sc2 then
-                                                                            sc2.Position = UDim2.new(0,0,-0.9,0)
-                                                                            sc2.BackgroundColor3 = Color3.fromRGB(54,54,54)
-                                                                            sc2.Size = UDim2.new(1,0,1,0)
-                                                                            for _, script in ipairs(scripts) do
+                                                                    local ua = parent:FindFirstChild("UIAspectRatioConstraint")
+                                                                    if ua then
+                                                                        ua.AspectRatio = 2.2
+                                                                        local tl2 = Frame:FindFirstChild("TextLabel")
+                                                                        if tl2 then
+                                                                            tl2.Visible = true
+                                                                            tl2.Text = "Script Folder"
+                                                                            tl2.BackgroundColor3 = Color3.fromRGB(54,54,54)
+                                                                            local sc2 Frame:FindFirstChild("ScrollingFrame")
+                                                                            if sc2 then
+                                                                                sc2.Position = UDim2.new(0,0,-0.9,0)
+                                                                                sc2.BackgroundColor3 = Color3.fromRGB(54,54,54)
+                                                                                sc2.Size = UDim2.new(1,0,1,0)
+                                                                                for _, script in ipairs(scripts) do
                                                                                 if script.Name == "Script" then
-                                                                                    script.TextXAlignment = Enum.TextXAlignment.Left
-                                                                                    script.TextSize = 12
-                                                                                    script.TextScaled = false
+                                                                                        script.TextXAlignment = Enum.TextXAlignment.Left
+                                                                                        script.TextSize = 12
+                                                                                        script.TextScaled = false
+                                                                                    end
                                                                                 end
                                                                             end
                                                                         end
