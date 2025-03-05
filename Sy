@@ -46,7 +46,7 @@ local function find1AndModifyImageLabel()
             if parent and parent:IsA("Frame") then
                 if parent.BackgroundColor3 == Color3.new(35/255, 35/255, 35/255) then
                     parent.BackgroundColor3 = Color3.new(45/255, 45/255, 45/255)
-                    parent.Size = UDim2.new(0.5, 0, 0.3, 0)
+                    parent.Size = UDim2.new(0.7, 0, 0.5, 0)
                     parent.BackgroundTransparency = 0
                     local h = Instance.new("Frame")
                     h.Parent = parent
