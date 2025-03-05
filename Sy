@@ -76,9 +76,9 @@ local function find1AndModifyImageLabel()
                                             f.Position = UDim2.new(0.05, 0, 0.05, 0)
                                             f.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                                             f.BorderSizePixel = 0
-                                            f.Text = " Editor Textsize"
+                                            f.Text = "ㅤEditor Textsize"
                                             f.Font = Enum.Font.SourceSans
-                                            f.TextSize = 15
+                                            f.TextSize = 25
                                             f.TextXAlignment = Enum.TextXAlignment.Left
                                             f.TextColor3 = Color3.new(1, 1, 1)
                                             local ff = Instance.new("TextBox")
@@ -99,10 +99,10 @@ local function find1AndModifyImageLabel()
                                             g.Position = UDim2.new(0.55,0,0.05)
                                             g.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                             g.BorderSizePixel = 0
-                                            g.Text = " Transparency"
+                                            g.Text = "ㅤTransparency"
                                             g.TextXAlignment = Enum.TextXAlignment.Left
                                             g.TextColor3 = Color3.new(1,1,1)
-                                            g.TextSize = 13
+                                            g.TextSize = 25
                                             local gg = Instance.new("TextBox")
                                             gg.Parent = g
                                             gg.Size = UDim2.new(0.49,0,0.9)
@@ -142,17 +142,17 @@ local function find1AndModifyImageLabel()
                                             kk.Position = UDim2.new(0.05, 0, 0.35, 0)
                                             kk.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                                             kk.BorderSizePixel = 0
-                                            kk.Text = "Red Cap:з"
+                                            kk.Text = "ㅤRed Cap:з"
                                             kk.TextXAlignment = Enum.TextXAlignment.Left
                                             kk.Font = Enum.Font.SourceSans
-                                            kk.TextSize = 13
+                                            kk.TextSize = 25
                                             kk.TextColor3 = Color3.new(1, 1, 1)
                                             local kkk = Instance.new("TextButton")
                                             kkk.Parent = kk
                                             kkk.Size = UDim2.new(0.3, 0, 0.7, 0)
                                             kkk.Text = ""
                                             kkk.Position = UDim2.new(0.65, 0, 0.15, 0)
-                                            kkk.BackgroundColor3 = Color3.fromRGB(0, 0, 200)
+                                            kkk.BackgroundColor3 = Color3.fromRGB(0, 100, 150)
                                             kkk.BorderSizePixel = 0
                                             kkk.MouseButton1Click:Connect(function()
                                                 if h.Visible == false then
