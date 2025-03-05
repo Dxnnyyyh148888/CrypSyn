@@ -99,10 +99,10 @@ local function find1AndModifyImageLabel()
                                             g.Position = UDim2.new(0.55,0,0.05)
                                             g.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                             g.BorderSizePixel = 0
-                                            g.Text = "Transp arency"
+                                            g.Text = "Transparency"
                                             g.TextXAlignment = Enum.TextXAlignment.Left
                                             g.TextColor3 = Color3.new(1,1,1)
-                                            g.TextScaled = true
+                                            g.TextSize = 13
                                             local gg = Instance.new("TextBox")
                                             gg.Parent = g
                                             gg.Size = UDim2.new(0.49,0,0.9)
@@ -142,10 +142,10 @@ local function find1AndModifyImageLabel()
                                             kk.Position = UDim2.new(0.05, 0, 0.55, 0)
                                             kk.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                                             kk.BorderSizePixel = 0
-                                            kk.Text = "Reddd Capp:з"
+                                            kk.Text = "Red Cap:з"
                                             kk.TextXAlignment = Enum.TextXAlignment.Left
                                             kk.Font = Enum.Font.SourceSans
-                                            kk.TextScaled = true
+                                            kk.TextSize = 13
                                             kk.TextColor3 = Color3.new(1, 1, 1)
                                             local kkk = Instance.new("TextButton")
                                             kkk.Parent = kk
@@ -171,7 +171,7 @@ local function find1AndModifyImageLabel()
                                                 if mics then
                                                     local re = Instance.new("TextLabel")
                                                     re.Parent = mics
-                                                    re.Size = UDim2.new(0.95,0,0.2)
+                                                    re.Size = UDim2.new(0.95,0,0.15)
                                                     re.Position = UDim2.new(0.025,0,0.025)
                                                     re.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                                     re.BorderSizePixel = 0
@@ -195,8 +195,8 @@ local function find1AndModifyImageLabel()
                                                     end)
                                                     local bb = Instance.new("TextLabel")
                                                     bb.Parent = mics
-                                                    bb.Size = UDim2.new(0.95,0,0.2)
-                                                    bb.Position = UDim2.new(0.025,0,0.25)
+                                                    bb.Size = UDim2.new(0.95,0,0.15)
+                                                    bb.Position = UDim2.new(0.025,0,0.2)
                                                     bb.BackgroundColor3 = Color3.fromRGB(50,50,50)
                                                     bb.BorderSizePixel = 0
                                                     bb.Text = " FPS-Booster"
