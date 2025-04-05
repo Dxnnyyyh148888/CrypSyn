@@ -65,7 +65,7 @@ local function find1AndModifyImageLabel()
                                 Edit.Size = UDim2.new(0.7,0,0.99)
                                 Edit.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
                                 local Tab = Edit:FindFirstChild("Tabs")
-                                if tab then
+                                if Tab then
                                     local yellow = Instance.new("Frame")
                                     yellow.Parent = tab
                                     yellow.Size = UDim2.new(0,70,0.25)
