@@ -64,6 +64,15 @@ local function find1AndModifyImageLabel()
                                 Edit.Position = UDim2.new(0.015, 0, 0, 0.5)
                                 Edit.Size = UDim2.new(0.7,0,0.99)
                                 Edit.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+                                local Tab = Edit:FindFirstChild("Tabs")
+                                if tab then
+                                    local yellow = Instance.new("Frame")
+                                    yellow.Parent = tab
+                                    yellow.Size = UDim2.new(0,70,0.25)
+                                    yellow.Position = UDim2.new(0,0,0.75)
+                                    yellow.BackgroundColor3 = Color3.new(1,1,0)
+                                    yellow.BorderSizePixel = 0
+                                end
                                 local ScrollingFrame = Edit:FindFirstChild("ScrollingFrame")
                                 if ScrollingFrame then
                                     local TextBox = ScrollingFrame:FindFirstChild("TextBox")
