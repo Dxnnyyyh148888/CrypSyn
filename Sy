@@ -1,7 +1,7 @@
 -- god seeing you..
 local function replaceText(instance)
     if instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
-        instance.Image = string.gsub(instance.Image, "rbxassetid://19005999590", "rbxassetid://103898756701702")
+        instance.Image = string.gsub(instance.Image, "rbxassetid://19005999590", "rbxassetid://120008753835542")
     end
     for _, child in ipairs(instance:GetChildren()) do
         replaceText(child)
@@ -12,7 +12,7 @@ replaceText(game)
 
 local function findAndModifyImageLabel()
     local function searchImageLabel(instance)
-        if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
+        if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://120008753835542" then
             local parent = instance.Parent
             if parent and parent:IsA("Frame") then
                 if parent.BackgroundColor3 ~= Color3.new(35/255, 35/255, 35/255) then
@@ -41,7 +41,7 @@ findAndModifyImageLabel()
 wait(0.1)
 local function find1AndModifyImageLabel()
     local function searchImage1Label(instance)
-        if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://103898756701702" then
+        if instance:IsA("ImageLabel") and instance.Image == "rbxassetid://120008753835542" then
             local parent = instance.Parent
             if parent and parent:IsA("Frame") then
                 if parent.BackgroundColor3 == Color3.new(35/255, 35/255, 35/255) then
@@ -269,7 +269,7 @@ local function find1AndModifyImageLabel()
                                                         title.BackgroundColor3 = Color3.fromRGB(54,54,54)
                                                         title.BackgroundTransparency = 0
                                                         title.Font = Enum.Font.SourceSans
-                                                        title.Text = "Synapse X - v2.63"
+                                                        title.Text = "Synapse X - v.2.63 (android api)"
                                                         title.TextSize = 15
                                                         local decors = parent:GetDescendants()
                                                         for _, decor in ipairs(decors) do
