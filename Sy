@@ -18,12 +18,16 @@ local function findAndModifyImageLabel()
                 if parent.BackgroundColor3 ~= Color3.new(35/255, 35/255, 35/255) then
                     parent.BackgroundTransparency = 1
 
-                    local grandParent = parent.Parent  
+                    local grandParent = parent.Parent
                     if grandParent and grandParent:IsA("TextButton") then  
                         grandParent.BackgroundTransparency = 1  
                         grandParent.Rotation = -20  
                         grandParent.Position = UDim2.new(0.02,0,0.03)  
-                        grandParent.Size = UDim2.new(0.05,0,0.1)  
+                        local uiasp = grandParent:FindFirstChild("UIAspectRatioConstraint")
+                        grandParent.Size = UDim2.new(0,40,0,45)
+                        if uiasp then
+                            uiasp:Destroy()
+                        end
                     end  
                 end  
             end  
@@ -278,7 +282,7 @@ local function find1AndModifyImageLabel()
                                                                 local logo = parent:FindFirstChild("Logo")
                                                                 if logo then
                                                                     logo.Rotation = 0
-                                                                    logo.Size = UDim2.new(0.04,0,0.0725)
+                                                                    logo.Size = UDim2.new(0.03,0,0.075)
                                                                     logo.Position = UDim2.new(0.001,0,0.037)
                                                                     local ua = parent:FindFirstChild("UIAspectRatioConstraint")
                                                                     if ua then
